@@ -20,8 +20,8 @@ PATHS = {
 # FILES
 # =========================================================
 FILES = {
-    "hrsl_raw": PATHS["data_raw"] / "population" / "population_20_lon_70_general-v1.5.tif",
-    "hrsl_clipped": PATHS["data_processed"] / "hrsl_clipped_delhi.tif",
+    "hrsl_raw": PATHS["data_raw"] / "population" / "hrsl_kenya.tif",
+    "hrsl_clipped": PATHS["data_processed"] / "hrsl_clipped_nairobi.tif",
     "grid": PATHS["data_processed"] / "grid.parquet",
     "grid_population": PATHS["data_processed"] / "grid_population.parquet",
     "hospitals": PATHS["data_processed"] / "hospitals.parquet",
@@ -34,28 +34,28 @@ FILES = {
 }
 
 # =========================================================
-# STUDY AREA — DELHI
+# STUDY AREA — NAIROBI
 # =========================================================
-CITY_NAME = "Delhi"
+CITY_NAME = "Nairobi"
 
-# Covers Delhi + surrounding NCR buffer (important for edge effects)
+# Covers Nairobi urban area with a reasonable surrounding buffer
 BBOX = {
-    "lon_min": 76.80,
-    "lat_min": 28.40,
-    "lon_max": 77.40,
-    "lat_max": 28.95,
+    "lon_min": 36.60,
+    "lat_min": -1.50,
+    "lon_max": 37.10,
+    "lat_max": -1.10,
 }
 
 # =========================================================
 # CRS
 # =========================================================
 CRS_WGS84 = "EPSG:4326"
-CRS_PROJECTED = "EPSG:3857"  # good enough for now
+CRS_PROJECTED = "EPSG:3857"
 
 # =========================================================
 # ANALYSIS SETTINGS
 # =========================================================
-GRID_SIZE_METERS = 1000   # 1 km grid
+GRID_SIZE_METERS = 1000
 TOP_K_HOSPITALS = 3
 
 DISTANCE_DECAY_ALPHA = 1.5
